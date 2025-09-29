@@ -43,24 +43,21 @@
   </section>
 
   <!-- About Section -->
-  <section class="py-12 px-6 md:px-20 bg-white">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <img src="https://via.placeholder.com/500x350" alt="Prasadam Image" class="rounded-2xl shadow-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl font-semibold text-[#EE542F] mb-4">About Meera Prasadam Seva</h2>
-        <p class="mb-4">
-          Shri Yog Abhyas Ashram Trust [Regd.] has initiated a humble service of love and compassion — 
-          <strong>Meera Prasadam Seva</strong>, a free food distribution program dedicated in the sacred memory of our Guru Mata Meera Ji.
-        </p>
-        <p>
-          This noble seva embodies the spirit of <em>Annadanam</em>, considered the highest form of charity in Sanātana Dharma.
-          As our Gurudev often reminded us, <span class="italic text-[#402021]">“Kalyug mein seva se hi moksha milta hai.”</span>
-        </p>
-      </div>
+  <section class="py-12 px-6 md:px-20 bg-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-semibold text-[#EE542F] mb-4">About Meera Prasadam Seva</h2>
+      <p class="mb-4">
+        Shri Yog Abhyas Ashram Trust [Regd.] has initiated a humble service of love and compassion — 
+        <strong>Meera Prasadam Seva</strong>, a free food distribution program dedicated in the sacred memory of our Guru Mata Meera Ji.
+      </p>
+      <p>
+        This noble seva embodies the spirit of <em>Annadanam</em>, considered the highest form of charity in Sanātana Dharma.
+        As our Gurudev often reminded us, <span class="italic text-[#402021]">“Kalyug mein seva se hi moksha milta hai.”</span>
+      </p>
     </div>
   </section>
+  
+  
 
   <!-- Inspiration Section -->
   <section class="py-12 px-6 md:px-20 bg-[#E1D4C8]">
@@ -77,7 +74,7 @@
         </p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/500x350" alt="Seva Service" class="rounded-2xl shadow-md" />
+        <img src="images/1.jpeg" alt="Seva Service" class="rounded-2xl shadow-md" />
       </div>
     </div>
   </section>
@@ -89,15 +86,38 @@
     </blockquote>
   </section>
 
-  <!-- Gallery Section -->
-  <section class="py-12 px-6 md:px-20 bg-white text-center">
-    <h2 class="text-2xl font-semibold text-[#EE542F] mb-6">Seva Moments</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <img src="https://via.placeholder.com/400x250" alt="Gallery 1" class="rounded-xl shadow-md" />
-      <img src="https://via.placeholder.com/400x250" alt="Gallery 2" class="rounded-xl shadow-md" />
-      <img src="https://via.placeholder.com/400x250" alt="Gallery 3" class="rounded-xl shadow-md" />
-    </div>
-  </section>
+<!-- Gallery Section -->
+<section class="py-12 px-6 md:px-20 bg-white text-center">
+  <h2 class="text-2xl font-semibold text-[#EE542F] mb-6">Seva Moments</h2>
+  
+  <div id="gallery" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <img src="images/7.jpeg" alt="Gallery 1" class="rounded-xl shadow-md w-full h-64 object-cover" />
+    <img src="images/2.jpeg" alt="Gallery 2" class="rounded-xl shadow-md w-full h-64 object-cover" />
+    <img src="images/3.jpeg" alt="Gallery 3" class="rounded-xl shadow-md w-full h-64 object-cover" />
+    <img src="images/4.jpeg" alt="Gallery 4" class="rounded-xl shadow-md w-full h-64 object-cover hidden extra" />
+    <img src="images/5.jpeg" alt="Gallery 5" class="rounded-xl shadow-md w-full h-64 object-cover hidden extra" />
+    <img src="images/6.jpeg" alt="Gallery 6" class="rounded-xl shadow-md w-full h-64 object-cover hidden extra" />
+  </div>
+
+  <!-- Buttons -->
+  <div class="mt-6">
+    <button id="viewMore" onclick="toggleGallery(true)" class="px-6 py-2 bg-[#EE542F] text-white rounded-lg shadow hover:bg-[#d9441f]">View More</button>
+    <button id="viewLess" onclick="toggleGallery(false)" class="px-6 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-800 hidden">View Less</button>
+  </div>
+</section>
+
+<script>
+  function toggleGallery(showMore) {
+    const extras = document.querySelectorAll(".extra");
+    const viewMoreBtn = document.getElementById("viewMore");
+    const viewLessBtn = document.getElementById("viewLess");
+
+    extras.forEach(img => img.classList.toggle("hidden", !showMore));
+    viewMoreBtn.classList.toggle("hidden", showMore);
+    viewLessBtn.classList.toggle("hidden", !showMore);
+  }
+</script>
+
 
   <!-- Donation Section -->
   <section class="py-16 px-6 md:px-20 bg-[#E1D4C8] text-center">
